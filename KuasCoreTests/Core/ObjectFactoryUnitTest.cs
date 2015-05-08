@@ -35,14 +35,14 @@ namespace KuasCoreTests.Core
 
             // 利用 Spring Object Name 來依賴尋找找出我們要的 Spring Object.
             IApplicationContext applicationContext = ObjectFactory.GetApplicationContext();
-            EmployeeService employeeService = (EmployeeService)applicationContext["employeeService"];
+            KuasCoreService kuasCoreService = (KuasCoreService)applicationContext["kuasCoreService"];
 
-            Employee empolyee = employeeService.GetEmployeeById("dennis_yen");
-            Assert.IsNotNull(empolyee);
+            MyCore core = kuasCoreService.GetCoreByName("微積分");
+            Assert.IsNotNull(core);
 
-            Console.WriteLine("員工編號為 = " + empolyee.Id);
-            Console.WriteLine("員工姓名為 = " + empolyee.Name);
-            Console.WriteLine("員工年齡為 = " + empolyee.Age);
+            Console.WriteLine("課程編號為 = " + core.CourseID);
+            Console.WriteLine("課程名稱為 = " + core.CourseName);
+            Console.WriteLine("課程描述為 = " + core.CourseDescription);
 
         }
 
@@ -51,14 +51,14 @@ namespace KuasCoreTests.Core
         {
 
             // 利用 Spring Object Name 來依賴尋找找出我們要的 Spring Object.
-            EmployeeService employeeService = (EmployeeService)ObjectFactory.GetObject("employeeService");
+            KuasCoreService kuasCoreService = (KuasCoreService)ObjectFactory.GetObject("kuasCoreService");
 
-            Employee empolyee = employeeService.GetEmployeeById("dennis_yen");
-            Assert.IsNotNull(empolyee);
+            MyCore core = kuasCoreService.GetCoreByName("微積分");
+            Assert.IsNotNull(core);
 
-            Console.WriteLine("員工編號為 = " + empolyee.Id);
-            Console.WriteLine("員工姓名為 = " + empolyee.Name);
-            Console.WriteLine("員工年齡為 = " + empolyee.Age);
+            Console.WriteLine("課程編號為 = " + core.CourseID);
+            Console.WriteLine("課程名稱為 = " + core.CourseName);
+            Console.WriteLine("課程描述為 = " + core.CourseDescription);
         }
 
     }

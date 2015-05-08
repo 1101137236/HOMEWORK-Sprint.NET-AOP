@@ -4,24 +4,22 @@ using System.Collections.Generic;
 
 namespace KuasCore.Services
 {
-    public interface IEmployeeService
+    public interface IKuasCoreService
     {
-
         /// <summary>
-        ///     取得所有員工資料.
+        ///     取得所有課程資料.
         /// </summary>
         /// <returns>
-        ///     所有員工資料
+        ///     所有課程資料
         /// </returns>
-        IList<Employee> GetAllEmployees();
+        IList<MyCore> GetAllCores();
 
         /// <summary>
-        ///     依據 ID 取得員工資料.
+        ///     依據 ID 取得課程資料.
         /// </summary>
         /// <returns>
-        ///     該員工資料
+        ///     該課程資料
         /// </returns>
-        Employee GetEmployeeById(string id);
-
+        MyCore GetCoreByName(string name);
     }
 }

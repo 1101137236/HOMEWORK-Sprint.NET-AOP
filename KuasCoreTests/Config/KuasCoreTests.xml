@@ -2,13 +2,12 @@
 
 <objects xmlns="http://www.springframework.net">
 
-  <object id="companyService" type="KuasCore.Services.Impl.CompanyService, KuasCore" />
 
-  <object id="employeeService" type="KuasCore.Services.Impl.EmployeeService, KuasCore">
-      <property name="EmployeeDao" ref="employeeDao" />
+  <object id="kuasCoreService" type="KuasCore.Services.Impl.KuasCoreService, KuasCore">
+      <property name="KuasCoreDao" ref="kuasCoreDao" />
   </object>
   
-  <object id="employeeDao" type="KuasCore.Dao.Impl.EmployeeDao, KuasCore">
+  <object id="kuasCoreDao" type="KuasCore.Dao.Impl.KuasCoreDao, KuasCore">
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
 
